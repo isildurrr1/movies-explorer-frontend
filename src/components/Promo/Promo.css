@@ -1,0 +1,9 @@
+.promo {
+  min-height: 664px;
+  background-color: #F3C1F8;
+  display: flex;
+}
+
+.promo__image {
+  margin: auto;
+}
