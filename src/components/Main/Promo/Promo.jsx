@@ -1,4 +1,4 @@
-import Header from "../Header/Header";
+import Header from "../../Header/Header";
 import './Promo.css'
 import practicum_logo from '../../images/practicum_logo.svg'
 

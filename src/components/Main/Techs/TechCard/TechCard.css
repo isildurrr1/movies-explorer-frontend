@@ -1,0 +1,16 @@
+.card {
+  width: 90px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #E8E8E8;
+  text-align: center;
+  line-height: 60px;
+  font-size: 14px;
+  letter-spacing: -0.56px;
+  transition: transform 0.3s;
+  cursor: default;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}

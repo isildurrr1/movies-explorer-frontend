@@ -1,0 +1,38 @@
+.element {
+  min-height: 90px;
+  max-width: 550px;
+}
+
+.element__title {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.8px;
+  font-weight: 400;
+}
+
+.element__paragraph {
+  margin: 23px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .element__paragraph {
+    margin-top: 22px;
+  }
+  .element__paragraph {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .element__title {
+    font-size: 18px;
+  }
+  .element__paragraph {
+    margin-top: 16px;
+    font-size: 11px;
+  }
+}
