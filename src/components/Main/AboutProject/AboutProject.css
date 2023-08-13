@@ -25,6 +25,7 @@
   .about__container {
     padding: 90px 50px;
   }
+
   .about__elements {
     gap: 30px;
     margin-bottom: 93px;
@@ -35,9 +36,11 @@
   .about__title {
     padding-bottom: 28px;
   }
+
   .about__container {
     padding: 70px 18px;
   }
+
   .about__elements {
     margin-top: 60px;
     margin-bottom: 60px;
