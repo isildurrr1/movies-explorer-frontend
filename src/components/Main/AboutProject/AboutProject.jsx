@@ -5,7 +5,7 @@ import Timeline from './Timeline/Timeline';
 
 const AboutProject = () => {
   return (
-    <section className='about'>
+    <section id="about" className='about'>
       <Container titleText={'О проекте'}>
         <div className="about__elements">
           <Element

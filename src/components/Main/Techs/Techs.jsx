@@ -13,7 +13,7 @@ const Techs = () => {
     'mongoDB'
   ]
   return (
-    <section className="techs">
+    <section id='techs' className="techs">
       <Container titleText={'Технологии'}>
         <h2 className="techs__title">7 технологий</h2>
         <p className="techs__subtitle">
