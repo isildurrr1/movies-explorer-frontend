@@ -1,3 +1,118 @@
 .header {
-  height: 74px;
+  line-height: 0;
+  display: flex;
+}
+
+.header_pink {
+  background-color: #F3C1F8;
+}
+
+.header__container {
+  width: 1280px;
+  margin: auto;
+}
+
+.header__box {
+  padding: 18px 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__right-container {
+  margin: auto 0;
+  display: flex;
+}
+
+.header__reg {
+  text-decoration: none;
+  color: black;
+  margin: auto 30px auto 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.header__log {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.header__nav-link {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: none;
+  color: black;
+  margin: auto 10px;
+}
+
+.header__nav-link_bold {
+  font-weight: 500;
+}
+
+.header__account-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: #F9F9F9;
+  display: flex;
+  margin-left: 13px;
+}
+
+.header__account {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  margin-left: 40px;
+  line-height: 30px;
+}
+
+.header__nav-container {
+  display: flex;
+}
+
+.header__account-logo {
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .header__box {
+    padding: 18px 30px;
+  }
+  .header__nav-container {
+    display: none;
+  }
+  .header__account {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__box {
+    padding: 18px 14px;
+  }
+
+  .header__reg {
+    margin-right: 14px;
+  }
+
+  .header__right-container>a {
+    font-size: 10px;
+  }
+
+  .header__log {
+    padding: 5px 12px;
+  }
 }

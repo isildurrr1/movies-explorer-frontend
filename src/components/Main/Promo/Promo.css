@@ -25,6 +25,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
+  cursor: default;
 }
 
 @media  screen and (max-width: 768px) {

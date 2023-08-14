@@ -1,10 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
 import Main from '../Main/Main';
 import './App.css';
+// import { useState } from 'react';
 
 const App = () => {
+  // const navigate = useNavigate();
+  // const [loggedIn, setLoggedIn] = useState(false);
+  const loggedIn = false;
   return (
     <div className="App">
-      <Main/>
+      <Routes>
+        <Route path='/' element={<Main loggedIn={loggedIn}/>} />
+      </Routes>
     </div>
   );
 }

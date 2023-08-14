@@ -1,9 +1,35 @@
 import './Header.css'
+import logo from '../../images/logo.svg'
+import accountLogo from '../../images/account-logo.svg'
 
-const Header = () => {
+const Header = ({ loggedIn, bgColor }) => {
   return (
-    <header className="header">
-      
+    <header className={`header ${bgColor === 'pink' ? 'header_pink' : ''}`}>
+      <div className="header__container">
+        <div className="header__box">
+          <a href="/" className="header__logo-link">
+            <img src={logo} alt="logo" className="header__logo" />
+          </a>
+          {!loggedIn ?
+            <div className="header__right-container">
+              <a href='/sign-up' className='header__reg'>Регистрация</a>
+              <a href='/sign-in' className='header__log'>Войти</a>
+            </div>
+            :
+            <div className="header__right-container">
+              <nav className="header__nav-container">
+                <a href='/movies' className='header__nav-link header__nav-link_bold'>Фильмы</a>
+                <a href='/saved-movies' className='header__nav-link'>Сохраненные фильмы</a>
+              </nav>
+              <a href='/movies' className='header__account'>
+                Аккаунт
+                <div className="header__account-icon">
+                  <img src={accountLogo} alt="accountLogo" className="header__account-logo" />
+                </div>
+              </a>
+            </div>}
+        </div>
+      </div>
     </header>
   );
 };
