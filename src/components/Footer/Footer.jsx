@@ -8,10 +8,10 @@ const Footer = () => {
           Учебный проект Яндекс.Практикум х BeatFilm.
         </div>
         <div className="footer__links-container">
-          <span class="footer__copyright">© 2023</span>
-          <nav class="footer__links">
-            <a href="https://practicum.yandex.ru/" class="footer__link" target="blank">Яндекс.Практикум</a>
-            <a href="https://github.com/isildurrr1" class="footer__link" target="blank">Github</a>
+          <span className="footer__copyright">© 2023</span>
+          <nav className="footer__links">
+            <a href="https://practicum.yandex.ru/" className="footer__link" target="blank">Яндекс.Практикум</a>
+            <a href="https://github.com/isildurrr1" className="footer__link" target="blank">Github</a>
           </nav>
         </div>
       </div>

@@ -67,9 +67,13 @@
   width: 30px;
   height: 30px;
   border-radius: 6px;
-  background: #F9F9F9;
+  background: url(../../images/account-logo.svg) no-repeat center #F9F9F9;
   display: flex;
   margin-left: 13px;
+}
+
+.header__account-icon_dark {
+  background: url(../../images/account-logo_main.svg) no-repeat center black;
 }
 
 .header__account {
@@ -85,10 +89,6 @@
 
 .header__nav-container {
   display: flex;
-}
-
-.header__account-logo {
-  margin: auto;
 }
 
 .header__burger-logo {

@@ -1,9 +1,10 @@
 import './Header.css'
 import logo from '../../images/logo.svg'
-import accountLogo from '../../images/account-logo.svg'
 import burger from '../../images/burger.svg'
+import { useLocation } from 'react-router-dom';
 
 const Header = ({ loggedIn, bgColor, menuActive }) => {
+  const location = useLocation();
   const hundleMenuActive = () => menuActive();
   return (
     <header className={`header ${bgColor === 'pink' ? 'header_pink' : ''}`}>
@@ -25,10 +26,7 @@ const Header = ({ loggedIn, bgColor, menuActive }) => {
                   <a href='/saved-movies' className='header__nav-link'>Сохраненные фильмы</a>
                 </nav>
                 <a href='/movies' className='header__account'>
-                  Аккаунт
-                  <div className="header__account-icon">
-                    <img src={accountLogo} alt="accountLogo" className="header__account-logo" />
-                  </div>
+                  Аккаунт<div className={`header__account-icon ${location.pathname === '/' ? 'header__account-icon_dark' : ''}`}></div>
                 </a>
                 <img src={burger} alt='burger' className='header__burger-logo' onClick={hundleMenuActive}/>
               </div>
