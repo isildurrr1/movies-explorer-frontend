@@ -13,7 +13,7 @@
 }
 
 .header__box {
-  padding: 18px 70px;
+  padding: 15px 70px;
   display: flex;
   justify-content: space-between;
 }
@@ -31,6 +31,10 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
+}
+
+.header__logo-link {
+  margin: auto 0;
 }
 
 .header__log {
@@ -87,15 +91,23 @@
   margin: auto;
 }
 
+.header__burger-logo {
+  display: none;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .header__box {
-    padding: 18px 30px;
+    padding: 15px 30px;
   }
   .header__nav-container {
     display: none;
   }
   .header__account {
     display: none;
+  }
+  .header__burger-logo {
+    display: block;
   }
 }
 

@@ -1,29 +1,18 @@
 .promo {
   min-height: 524px;
-  background-color: #F3C1F8;
   display: flex;
-  position: relative;
-}
-
-.promo__image {
-  max-width: 320px;
-  margin: auto;
+  background: url('../../../images/practicum_logo.svg') center / 320px no-repeat #F3C1F8;
 }
 
 .promo__title {
   max-width: 730px;
   max-height: 116px;
-  position: absolute;
   text-align: center;
   font-size: 50px;
   font-weight: 400;
   font-style: normal;
   line-height: 58px;
   letter-spacing: -2px;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   margin: auto;
   cursor: default;
 }
@@ -37,13 +26,11 @@
 @media  screen and (max-width: 425px) {
   .promo {
     min-height: 570px;
+    background-size: 248px;
   }
   .promo__title {
     font-size: 31px;
     line-height: 39px;
     letter-spacing: -1.24px;
-  }
-  .promo__image {
-    max-width: 248px;
   }
 }

@@ -1,8 +1,10 @@
 import './Header.css'
 import logo from '../../images/logo.svg'
 import accountLogo from '../../images/account-logo.svg'
+import burger from '../../images/burger.svg'
 
-const Header = ({ loggedIn, bgColor }) => {
+const Header = ({ loggedIn, bgColor, menuActive }) => {
+  const hundleMenuActive = () => menuActive();
   return (
     <header className={`header ${bgColor === 'pink' ? 'header_pink' : ''}`}>
       <div className="header__container">
@@ -16,18 +18,22 @@ const Header = ({ loggedIn, bgColor }) => {
               <a href='/sign-in' className='header__log'>Войти</a>
             </div>
             :
-            <div className="header__right-container">
-              <nav className="header__nav-container">
-                <a href='/movies' className='header__nav-link header__nav-link_bold'>Фильмы</a>
-                <a href='/saved-movies' className='header__nav-link'>Сохраненные фильмы</a>
-              </nav>
-              <a href='/movies' className='header__account'>
-                Аккаунт
-                <div className="header__account-icon">
-                  <img src={accountLogo} alt="accountLogo" className="header__account-logo" />
-                </div>
-              </a>
-            </div>}
+            <>
+              <div className="header__right-container">
+                <nav className="header__nav-container">
+                  <a href='/movies' className='header__nav-link header__nav-link_bold'>Фильмы</a>
+                  <a href='/saved-movies' className='header__nav-link'>Сохраненные фильмы</a>
+                </nav>
+                <a href='/movies' className='header__account'>
+                  Аккаунт
+                  <div className="header__account-icon">
+                    <img src={accountLogo} alt="accountLogo" className="header__account-logo" />
+                  </div>
+                </a>
+                <img src={burger} alt='burger' className='header__burger-logo' onClick={hundleMenuActive}/>
+              </div>
+            </>
+          }
         </div>
       </div>
     </header>

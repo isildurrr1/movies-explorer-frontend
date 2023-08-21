@@ -1,5 +1,4 @@
 import './Promo.css'
-import practicum_logo from '../../../images/practicum_logo.svg'
 
 const Promo = () => {
   return (
@@ -8,11 +7,6 @@ const Promo = () => {
         Учебный проект студента
         факультета Веб-разработки.
       </h1>
-      <img
-        className="promo__image"
-        src={practicum_logo}
-        alt="practicum_logo"
-      />
     </div>
   );
 };
