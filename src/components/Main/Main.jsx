@@ -10,8 +10,8 @@ import './Main.css'
 import { useState } from "react";
 
 const Main = ({ loggedIn }) => {
-  const [menuActive, setMenuActive] = useState(true);
-  const toggleMenuActive = () => setMenuActive(menuActive);
+  const [menuActive, setMenuActive] = useState(false);
+  const toggleMenuActive = () => setMenuActive(!menuActive);
   return (
     <main className="main">
       {menuActive && <BurgerMenu closeMenu={toggleMenuActive}/>}
