@@ -8,11 +8,8 @@ import AboutMe from "./AboutMe/AboutMe";
 import BurgerMenu from "../Header/BurgerMenu/BurgerMenu";
 import Portfolio from "./Portfolio/Portfolio";
 import './Main.css'
-import { useState } from "react";
 
-const Main = ({ loggedIn }) => {
-  const [menuActive, setMenuActive] = useState(false);
-  const toggleMenuActive = () => setMenuActive(!menuActive);
+const Main = ({ loggedIn, menuActive, toggleMenuActive }) => {
   return (
     <main className="main">
       {menuActive && <BurgerMenu closeMenu={toggleMenuActive} />}
