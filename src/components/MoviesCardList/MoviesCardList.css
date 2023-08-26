@@ -1,9 +1,28 @@
 .card-list {
   max-width: 1140px;
-  border: 1px solid;
   margin: 70px auto 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
   grid-gap: 43px 30px;
   justify-content: center;
+}
+
+.card-list__btn-container {
+  max-width: 1140px;
+  margin: 50px auto 80px auto;
+  display: flex;
+}
+
+.card-list__button {
+  background: #F9F9F9;
+  margin: auto;
+  width: 320px;
+  height: 36px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
