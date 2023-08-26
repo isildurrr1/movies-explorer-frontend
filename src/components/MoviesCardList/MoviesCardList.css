@@ -25,4 +25,22 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .card-list {
+    grid-template-columns: repeat(auto-fit, 339px);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card-list {
+    grid-template-columns: repeat(auto-fit, 300px);
+    margin-top: 40px;
+    gap: 39px;
+  }
+  .card-list__button {
+    width: 240px;
+  }
 }
