@@ -41,6 +41,12 @@
   font-size: 13px;
   line-height: normal;
   color: black;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.footer__link:hover {
+  transition: opacity 0.3s;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 768px) {

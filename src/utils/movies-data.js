@@ -70,6 +70,12 @@ const movies = [
     name: 'По волнам: Искусство звука в кино',
     duration: '1ч 17м',
     saved: false,
+  },
+  {
+    frame: 'https://goo.su/jgAWdx',
+    name: 'Крестный отец',
+    duration: '2ч 55м',
+    saved: true,
   }
 ];
 

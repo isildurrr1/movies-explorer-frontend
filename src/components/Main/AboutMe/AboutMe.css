@@ -54,6 +54,13 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.aboutme__githab-link:hover {
+  transition: opacity 0.3s;
+  opacity: 0.6;
 }
 
 @media screen and (max-width: 768px) {

@@ -4,7 +4,7 @@ import movies from '../../utils/movies-data'
 import { useState } from 'react';
 
 const MoviesCardList = () => {
-  const [count, setCount] = useState(11);
+  const [count, setCount] = useState(12);
   const addMovies = () => setCount(count + 12);
   return (
     <>
