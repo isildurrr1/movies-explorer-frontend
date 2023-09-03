@@ -1,0 +1,39 @@
+.navTab {
+  background-color: black;
+  display: flex;
+}
+
+.navTab__links {
+  margin: 24px auto;
+}
+
+.navTab__link {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  color: white;
+  margin: 0 20px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.navTab__link:hover {
+  transition: opacity 0.3s;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .navTab__links {
+    margin: 24px auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navTab__links {
+    margin: 24px auto;
+  }
+  .navTab__link {
+    font-size: 11px;
+    margin: 0 12px;
+  }
+}

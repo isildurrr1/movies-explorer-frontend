@@ -1,0 +1,138 @@
+.header {
+  line-height: 0;
+  display: flex;
+}
+
+.header_place_main {
+  background-color: #F3C1F8;
+}
+
+.header__container {
+  width: 1280px;
+  margin: auto;
+}
+
+.header__box {
+  padding: 18px 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__rightContainer {
+  margin: auto 0;
+  display: flex;
+}
+
+.header__reg {
+  text-decoration: none;
+  color: black;
+  margin: auto 30px auto 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.header__reg:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.header__log {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 3px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.header__log:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.header__navLink {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: none;
+  color: black;
+  margin: auto 10px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.header__navLink:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.header__navLink_bold {
+  font-weight: 500;
+}
+
+.header__buttonContainer {
+  margin-left: 40px;
+}
+
+
+.header__navContainer {
+  display: flex;
+}
+
+.header__burgerLogo {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  background: url(../../images/burger.svg) no-repeat center;
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .header__box {
+    padding: 18px 30px;
+  }
+  .header__navContainer {
+    display: none;
+  }
+  .header__buttonContainer {
+    display: none;
+  }
+  .header__burgerLogo {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .header__box {
+    padding: 18px 14px;
+  }
+
+  .header__reg {
+    margin-right: 14px;
+  }
+
+  .header__rightContainer>a {
+    font-size: 10px;
+  }
+
+  .header__log {
+    padding: 5px 12px;
+  }
+
+  .header__burgerLogo {
+    width: 37px;
+    height: 37px;
+  }
+}
