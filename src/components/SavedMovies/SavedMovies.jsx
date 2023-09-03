@@ -4,7 +4,7 @@ import MoviesCardList from '../MoviesCardList/MoviesCardList'
 
 const SavedMovies = () => {
   return (
-    <section className='saved-movies'>
+    <section className='savedMovies'>
       <Search />
       <MoviesCardList/>
     </section>

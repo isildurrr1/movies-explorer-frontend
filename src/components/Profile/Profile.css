@@ -58,13 +58,13 @@
   flex-direction: column;
 }
 
-.profile__input-container {
+.profile__inputContainer {
   display: flex;
   justify-content: space-between;
   height: 47px;
 }
 
-.profile__input-container_underline {
+.profile__inputContainer_underline {
   border-bottom: 1px solid #E8E8E8;
 }
 
@@ -112,7 +112,7 @@
   flex-direction: column;
 }
 
-.profile__edit-container {
+.profile__editContainer {
   display: flex;
   flex-direction: column;
   margin-top: 189px;

@@ -1,15 +1,15 @@
-.movies-card {
+.moviesCard {
   display: inline-block;
   cursor: pointer;
   position: relative;
 }
 
-.movies-card:hover> .movies-card__save-btn {
+.moviesCard:hover> .moviesCard__save-btn {
   opacity: 1;
   transition: opacity 0.4s;
 }
 
-.movies-card__save-btn {
+.moviesCard__save-btn {
   border: none;
   cursor: pointer;
   opacity: 0;
@@ -28,7 +28,7 @@
   transition: opacity 0.4s;
 }
 
-.movies-card__saved {
+.moviesCard__saved {
   border: none;
   cursor: pointer;
   width: 21px;
@@ -40,38 +40,38 @@
   transition: background 0.3s, opacity 0.5s;
 }
 
-.movies-card__saved_hidden {
+.moviesCard__saved_hidden {
   background: url(../../images/del.svg) no-repeat center;
   opacity: 0;
   transition: opacity 0.3s; 
 }
 
-.movies-card__saved:hover {
+.moviesCard__saved:hover {
   opacity: 0.8;
   transition: opacity 0.3s;
 }
 
-.movies-card:hover> .movies-card__saved {
+.moviesCard:hover> .moviesCard__saved {
   visibility: visible;
   background: url(../../images/del.svg) no-repeat center;
   transition: background 0.3s ;
   opacity: 1;
 }
 
-.movies-card__frame {
+.moviesCard__frame {
   width: 360px;
   height: 201px;
   border-radius: 6px;
   object-fit: cover;
 }
 
-.movies-card__discription {
+.moviesCard__discription {
   display: flex;
   justify-content: space-between;
   margin: 10.8px 14px 0 14px;
 }
 
-.movies-card__name {
+.moviesCard__name {
   margin: 0;
   max-width: 250px;
   height: 32px;
@@ -83,7 +83,7 @@
   line-height: normal;
 }
 
-.movies-card__duration {
+.moviesCard__duration {
   margin: 0;
   color: #A0A0A0;
   font-size: 11px;
@@ -101,20 +101,20 @@
 }
 
 @media screen and (max-width: 768px) {
-  .movies-card__frame {
+  .moviesCard__frame {
     width: 339px;
     height: 190px;
   }
 
-  .movies-card__discription {
+  .moviesCard__discription {
     margin: 22px 0 0 0;
   }
 
-  .movies-card__duration {
+  .moviesCard__duration {
     margin: 0;
   }
 
-  .movies-card__name {
+  .moviesCard__name {
     height: 16px;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -125,23 +125,23 @@
 }
 
 @media screen and (max-width: 425px) {
-  .movies-card__frame {
+  .moviesCard__frame {
     width: 300px;
     height: 168px;
   }
 
-  .movies-card__name {
+  .moviesCard__name {
     max-width: 240px;
   }
 
-  .movies-card__discription {
+  .moviesCard__discription {
     margin-top: 13px;
   }
-  .movies-card__saved {
+  .moviesCard__saved {
     top: 10px;
     right: 10px;
   }
-  .movies-card__save-btn {
+  .moviesCard__save-btn {
     opacity: 1;
     top: 10px;
     right: 10px;

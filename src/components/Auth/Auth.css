@@ -7,7 +7,7 @@
   margin: auto;
 }
 
-.auth__header-title {
+.auth__headerTitle {
   font-size: 24px;
   font-weight: 500;
   margin: 40px 0 0 0;
@@ -79,17 +79,17 @@
   margin-top: 157px;
 }
 
-.auth__under-button-container {
+.auth__underButtonContainer {
   margin: auto;
 }
 
-.auth__under-button-text {
+.auth__underButtonText {
   color: #A0A0A0;
   font-size: 14px;
   font-weight: 400;
 }
 
-.auth__link-text {
+.auth__linkText {
   text-decoration: none;
   color: black;
   font-size: 14px;
@@ -98,17 +98,21 @@
   transition: opacity 0.3s;
 }
 
-.auth__link-text:hover {
+.auth__linkText:hover {
   opacity: 0.7;
   transition: opacity 0.3s;
 }
 
 @media screen and (max-width: 425px) {
   .auth__container {
-    margin: auto;
+    margin:  55px auto 0 auto;
   }
 
-  .auth__header-title {
+  .auth__input {
+    padding-left: 15px;
+  }
+
+  .auth__headerTitle {
     margin-top: 50px;
     text-align: center;
   }
@@ -120,10 +124,10 @@
   .auth__form {
     width: 260px;
     height: 600px;
-    margin-top: 82px;
+    margin-top: 80px;
   }
 
-  .auth__header-container {
+  .auth__headerContainer {
     display: flex;
     flex-direction: column;
   }
@@ -136,13 +140,13 @@
   .auth__submit_log {
     margin-top: 248px;
   }
-  .auth__link-text {
+  .auth__linkText {
     font-size: 12px;
   }
-  .auth__under-button-text {
+  .auth__underButtonText {
     font-size: 12px;
   }
-  .auth__under-button-container {
+  .auth__underButtonContainer {
     margin: 0 auto;
   }
 }

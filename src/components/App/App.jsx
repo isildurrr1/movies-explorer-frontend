@@ -21,7 +21,8 @@ const App = () => {
   const [menuActive, setMenuActive] = useState(false);
   const toggleMenuActive = () => setMenuActive(!menuActive);
   const handleRegister = () => {
-    navigate('/signin', { replace: true });
+    setLoggedIn(true);
+    navigate('/', { replace: true });
   }
   const handleLogin = () => {
     setLoggedIn(true);

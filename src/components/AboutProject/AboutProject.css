@@ -3,7 +3,7 @@
   margin: auto;
   font-style: normal;
   line-height: normal;
-  margin: 10px auto 10px auto;
+  margin: 10px auto;
 }
 
 
@@ -20,6 +20,9 @@
   .about__elements {
     gap: 30px;
     margin-bottom: 93px;
+  }
+  .about {
+    margin: 0 auto ;
   }
 }
 

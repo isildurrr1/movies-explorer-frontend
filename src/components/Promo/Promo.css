@@ -20,20 +20,22 @@
 
 @media  screen and (max-width: 768px) {
   .promo {
-    min-height: 786px;
+    min-height: 784px;
     background-position: top 224px center;
   }
   .promo__title {
-    margin-top: 330px;
+    margin-top: 328px;
   }
 }
 
 @media  screen and (max-width: 425px) {
   .promo {
-    min-height: 570px;
+    min-height: 400px;
     background-size: 248px;
+    background-position: top 143px center;
   }
   .promo__title {
+    margin: 207px auto 246px auto;
     font-size: 31px;
     line-height: 39px;
     letter-spacing: -1.24px;

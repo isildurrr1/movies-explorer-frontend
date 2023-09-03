@@ -1,0 +1,30 @@
+.account {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+  display: flex;
+  line-height: 30px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.account:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.account::after {
+  content: '';
+  background: url('../../images/account-logo.svg') center no-repeat #F9F9F9;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  margin-left: 13px;
+}
+
+.account_darkTheme::after {
+  content: '';
+  background: url('../../images/account-logo_main.svg') center no-repeat black
+}

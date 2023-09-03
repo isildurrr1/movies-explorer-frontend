@@ -1,23 +1,27 @@
-.card-list {
+.cardList {
   min-height: 474px;
+  max-width: 1280px;
+  margin: auto;
 }
 
-.card-list__container {
+.cardList__container {
   max-width: 1140px;
-  margin: 70px auto 0 auto;
+  margin: 0 70px;
+  border-top: 1px solid #E8E8E8;
+  padding-top: 80px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 360px);
   grid-gap: 43px 30px;
   justify-content: center;
 }
 
-.card-list__btn-container {
+.cardList__btnContainer {
   max-width: 1140px;
   margin: 62px auto 80px auto;
   display: flex;
 }
 
-.card-list__button {
+.cardList__button {
   background: #F9F9F9;
   margin: auto;
   width: 320px;
@@ -34,24 +38,26 @@
   transition: opacity 0.3s;
 }
 
-.card-list__button:hover {
+.cardList__button:hover {
   opacity: 0.8;
   transition: opacity 0.3s;
 }
 
 @media screen and (max-width: 768px) {
-  .card-list__container {
+  .cardList__container {
+    margin: 0 30px;
     grid-template-columns: repeat(auto-fit, 339px);
   }
 }
 
 @media screen and (max-width: 425px) {
-  .card-list__container {
+  .cardList__container {
     grid-template-columns: repeat(auto-fit, 300px);
-    margin-top: 40px;
+    margin: 0 10px 0 10px;
+    padding-top: 50px;
     gap: 35px;
   }
-  .card-list__button {
+  .cardList__button {
     width: 240px;
   }
 }

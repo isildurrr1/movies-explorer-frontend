@@ -1,6 +1,5 @@
 .aboutMe {
   margin-top: 11px;
-
 }
 .aboutMe__container {
   display: flex;
@@ -47,7 +46,7 @@
   line-height: 22px;
 }
 
-.aboutMe__githab-link {
+.aboutMe__githabLink {
   text-decoration: none;
   color: black;
   font-size: 14px;
@@ -58,12 +57,15 @@
   transition: opacity 0.3s;
 }
 
-.aboutMe__githab-link:hover {
+.aboutMe__githabLink:hover {
   transition: opacity 0.3s;
   opacity: 0.6;
 }
 
 @media screen and (max-width: 768px) {
+  .aboutMe {
+    margin-top: 1px;
+  }
   .aboutMe__bio {
     max-width: 364px;
   }
@@ -95,6 +97,7 @@
 
 @media screen and (max-width: 435px) {
   .aboutMe__container {
+    margin: 0 -4px;
     flex-direction: column-reverse;
   }
   .aboutMe__photo {

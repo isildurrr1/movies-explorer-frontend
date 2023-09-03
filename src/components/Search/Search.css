@@ -1,10 +1,12 @@
 .search {
   max-width: 1280px;
   margin: auto;
+  box-sizing: border-box;
 }
 
 .search__container {
   max-width: 1140px;
+  /* border-bottom: 1px solid #E8E8E8; */
   height: 72px;
   margin: 70px;
   border-radius: 9px;
@@ -14,14 +16,7 @@
   justify-content: space-between;
 }
 
-.search__line {
-  max-width: 1140px;
-  margin: 0 70px 0 70px;
-  height: 10px;
-  border-top: 1px solid #E8E8E8;
-}
-
-.search__input-container {
+.search__inputContainer {
   display: flex;
   height: 40px;
   width: 100%;
@@ -30,20 +25,13 @@
   border-right: 1px solid #CBCBCB;
 }
 
-.search__input-container::before {
+.search__inputContainer::before {
   content: '';
   width: 34px;
   height: 34px;
   background: url('../../images/search.svg') center no-repeat;
   margin: auto 10px auto 1px;
 }
-
-/* .search__icon {
-  width: 34px;
-  height: 34px;
-  background: url(../../images/search.svg) center no-repeat;
-  margin: auto 10px auto 1px;
-} */
 
 .search__input {
   width: 100%;
@@ -79,13 +67,13 @@
   opacity: 0.8;
 }
 
-.search__switch-container {
+.search__switchContainer {
   display: flex;
   margin: auto 0;
   padding: 0 30px 0 30px;
 }
 
-.search__switch-container_mobile {
+.search__switchContainer_mobile {
   display: none;
 }
 
@@ -133,7 +121,7 @@ input:checked+.search__slider:before {
   display: none;
 }
 
-.search__switch-name {
+.search__switchName {
   user-select:none;
   cursor: pointer;
   margin-left: 14px;
@@ -152,7 +140,7 @@ input:checked+.search__slider:before {
     margin: 0 30px 0 30px;
   }
 
-  .search__switch-container {
+  .search__switchContainer {
     padding: 0 20px 0 20px;
   }
 
@@ -160,7 +148,7 @@ input:checked+.search__slider:before {
     width: 72px;
   }
 
-  .search__input-container::before {
+  .search__inputContainer::before {
     margin: 3px 0 0 2px;
   }
 
@@ -179,18 +167,18 @@ input:checked+.search__slider:before {
   }
 
   .search__container {
-    margin: 80px 10px 35px 10px;
+    margin: 80px 10px 45px 10px;
   }
 
-  .search__input-container::before {
+  .search__inputContainer::before {
     display: none;
   }
 
-  .search__switch-container {
+  .search__switchContainer {
     display: none;
   }
 
-  .search__input-container {
+  .search__inputContainer {
     border: none;
     width: 262px;
   }
@@ -201,13 +189,13 @@ input:checked+.search__slider:before {
     padding-left: 0;
   }
 
-  .search__switch-container_mobile {
+  .search__switchContainer_mobile {
     display: flex;
-    margin: 0 auto 35px auto;
+    margin: 0 auto 46px auto;
     justify-content: center;
   }
 
-  .search__switch-name {
+  .search__switchName {
     font-size: 11px;
     line-height: 18px;
   }

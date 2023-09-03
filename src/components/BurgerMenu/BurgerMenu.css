@@ -15,12 +15,12 @@
   background-color: white;
 }
 
-.menu__close-btn {
+.menu__closeBtn {
   width: 22px;
   height: 22px;
   padding: 0;
   cursor: pointer;
-  background: url('../../images/close.svg') no-repeat center ;
+  background: url('../../images/close.svg') no-repeat center;
   border: none;
   position: absolute;
   top: 22px;
@@ -34,13 +34,13 @@
   justify-content: space-between;
 }
 
-.menu__nav-container {
+.menu__navContainer {
   display: flex;
   flex-direction: column;
   margin: 159px auto 0 auto;
 }
 
-.menu__nav-link {
+.menu__navLink {
   text-align: center;
   text-decoration: none;
   color: black;
@@ -51,31 +51,11 @@
   margin: 0 auto 30px auto;
 }
 
-.menu__account-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  background: #F9F9F9;
-  display: flex;
-  margin-left: 13px;
-}
-
-.menu__account {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  display: flex;
+.menu__buttonContainer {
   margin: 0 auto 92px auto;
-  line-height: 30px;
 }
 
-.menu__account-logo {
-  margin: auto;
-}
-
-.menu__nav-link_active {
+.menu__navLink_active {
   box-sizing: border-box;
   padding-bottom: 5px;
   margin-bottom: 23px;
@@ -86,20 +66,24 @@
   .menu__container {
     width: 100vw;
   }
-  .menu__nav-container {
+
+  .menu__navContainer {
     margin-top: 144px;
   }
-  .menu__nav-link {
+
+  .menu__navLink {
     margin-bottom: 24px;
   }
-  .menu__account {
-    margin-bottom: 48px;
-  }
-  .menu__close-btn {
+
+  .menu__closeBtn {
     top: 13px;
     right: 13px;
   }
-  .menu__nav-link_active {
+
+  .menu__buttonContainer {
+    margin-bottom: 48px;
+  }
+  .menu__navLink_active {
     box-sizing: border-box;
     padding-bottom: 5px;
     margin-bottom: 17px;

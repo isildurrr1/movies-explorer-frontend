@@ -1,6 +1,6 @@
 .portfolio__container {
   max-width: 1140px;
-  padding: 0 70px 125px 70px;
+  padding: 0 70px 106px 70px;
   margin: auto;
 }
 
@@ -10,7 +10,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
-  margin: 0 0 50px 0;
+  margin: 0 0 30px 0;
   display: inline-block;
 }
 
@@ -26,6 +26,12 @@
   font-weight: 400;
   line-height: 50px;
   letter-spacing: -1.2px;
+  padding: 20px 0;
+}
+
+.portfolio__link_border {
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 .portfolio__link:hover {
@@ -34,11 +40,11 @@
   
 }
 
-.portfolio__link_how-to-lern::before {
+.portfolio__link_howToLern::before {
   content: 'Статичный сайт';
 }
 
-.portfolio__link_ru-travel::before {
+.portfolio__link_ruTravel::before {
   content: 'Адаптивный сайт';
 }
 
@@ -51,15 +57,9 @@
   margin: auto 0;
 }
 
-.portfolio__line {
-  height: 19px;
-  border-bottom: 1px solid #E8E8E8;
-  margin-bottom: 20px;
-}
-
 @media screen and (max-width: 768px) {
   .portfolio__container {
-    padding: 0 50px 90px 50px;
+    padding: 0 50px 70px 50px;
   }
 
   .portfolio__link {
@@ -70,12 +70,12 @@
 
 @media screen and (max-width: 425px) {
   .portfolio__container {
-    padding: 0 14px 70px 14px;
+    padding: 0 14px 50px 14px;
   }
 
   .portfolio__title {
     font-size: 14px;
-    margin-bottom: 40px;
+    margin-bottom: 18px;
   }
 
   .portfolio__link {

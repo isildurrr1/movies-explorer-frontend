@@ -1,5 +1,5 @@
 import './Container.css';
-import Title from './Title/Title';
+import Title from '../Title/Title';
 
 const Container = ({ children, titleText }) => {
   return (

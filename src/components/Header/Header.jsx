@@ -1,6 +1,7 @@
 import './Header.css'
-import logo from '../../images/logo.svg'
 import { Link, useLocation } from 'react-router-dom';
+import ProfileButton from '../ProfileButton/ProfileButton';
+import Logo from '../Logo/Logo';
 
 const Header = ({ loggedIn, menuActive }) => {
   const location = useLocation();
@@ -9,25 +10,23 @@ const Header = ({ loggedIn, menuActive }) => {
     <header className={`header ${location.pathname === '/' ? 'header_place_main' : ''}`}>
       <div className="header__container">
         <div className="header__box">
-          <Link to="/" className="header__logo-link">
-            <img src={logo} alt="logo" className="header__logo" />
-          </Link>
+          <Logo />
           {!loggedIn ?
-            <nav className="header__right-container">
+            <nav className="header__rightContainer">
               <Link to='/signup' className='header__reg'>Регистрация</Link>
               <Link to='/signin' className='header__log'>Войти</Link>
             </nav>
             :
             <>
-              <div className="header__right-container">
-                <nav className="header__nav-container">
-                  <Link to='/movies' className={`header__nav-link ${location.pathname === '/movies' && 'header__nav-link_bold'}`}>Фильмы</Link>
-                  <Link to='/saved-movies' className={`header__nav-link ${location.pathname === '/saved-movies' && 'header__nav-link_bold'}`}>Сохраненные фильмы</Link>
+              <div className="header__rightContainer">
+                <nav className="header__navContainer">
+                  <Link to='/movies' className={`header__navLink ${location.pathname === '/movies' && 'header__navLink_bold'}`}>Фильмы</Link>
+                  <Link to='/saved-movies' className={`header__navLink ${location.pathname === '/saved-movies' && 'header__navLink_bold'}`}>Сохраненные фильмы</Link>
                 </nav>
-                <Link to='/profile' className='header__account'>
-                  Аккаунт<div className={`header__account-icon ${location.pathname === '/' ? 'header__account-icon_dark' : ''}`}></div>
-                </Link>
-                <button className='header__burger-logo' onClick={hundleMenuActive} />
+                <div className="header__buttonContainer">
+                  <ProfileButton />
+                </div>
+                <button className='header__burgerLogo' onClick={hundleMenuActive} />
               </div>
             </>
           }

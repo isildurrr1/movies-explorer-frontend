@@ -7,7 +7,7 @@ const Footer = () => {
         <h3 className="footer__name">
           Учебный проект Яндекс.Практикум х BeatFilm.
         </h3>
-        <div className="footer__links-container">
+        <div className="footer__linksContainer">
           <p className="footer__copyright">© 2023</p>
           <nav className="footer__links">
             <a href="https://practicum.yandex.ru/" className="footer__link" target="blank">Яндекс.Практикум</a>

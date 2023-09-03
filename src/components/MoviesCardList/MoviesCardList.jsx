@@ -17,16 +17,16 @@ const MoviesCardList = () => {
   const [count, setCount] = useState(12);
   const addMovies = () => setCount(count + 12);
   return (
-    <section className='card-list'>
-      <div className='card-list__container'>
+    <section className='cardList'>
+      <div className='cardList__container'>
         {
           movies.length === 0 ? <Preloader /> :
             movies.slice(0, count).map((data, i) => <MoviesCard movie={data} key={i} />)
         }
       </div>
       {count < movies.length &&
-        <div className='card-list__btn-container'>
-          <button className='card-list__button' onClick={addMovies}>Ещё</button>
+        <div className='cardList__btnContainer'>
+          <button className='cardList__button' onClick={addMovies}>Ещё</button>
         </div>
       }
     </section>

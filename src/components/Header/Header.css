@@ -18,7 +18,7 @@
   justify-content: space-between;
 }
 
-.header__right-container {
+.header__rightContainer {
   margin: auto 0;
   display: flex;
 }
@@ -31,10 +31,13 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
-.header__logo-link {
-  margin: auto 0;
+.header__reg:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
 }
 
 .header__log {
@@ -47,9 +50,16 @@
   font-style: normal;
   font-weight: 500;
   line-height: 16px;
+  opacity: 1;
+  transition: opacity 0.3s;
 }
 
-.header__nav-link {
+.header__log:hover {
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.header__navLink {
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -61,51 +71,25 @@
   transition: opacity 0.3s;
 }
 
-.header__nav-link:hover {
+.header__navLink:hover {
   opacity: 0.7;
   transition: opacity 0.3s;
 }
 
-.header__nav-link_bold {
+.header__navLink_bold {
   font-weight: 500;
 }
 
-.header__account-icon {
-  width: 30px;
-  height: 30px;
-  border-radius: 6px;
-  background: url(../../images/account-logo.svg) no-repeat center #F9F9F9;
-  display: flex;
-  margin-left: 13px;
-}
-
-.header__account-icon_dark {
-  background: url(../../images/account-logo_main.svg) no-repeat center black;
-}
-
-.header__account {
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-  display: flex;
+.header__buttonContainer {
   margin-left: 40px;
-  line-height: 30px;
-  opacity: 1;
-  transition: opacity 0.3s;
 }
 
-.header__account:hover {
-  opacity: 0.7;
-  transition: opacity 0.3s;
-}
 
-.header__nav-container {
+.header__navContainer {
   display: flex;
 }
 
-.header__burger-logo {
+.header__burgerLogo {
   width: 44px;
   height: 44px;
   padding: 0;
@@ -117,15 +101,15 @@
 
 @media screen and (max-width: 768px) {
   .header__box {
-    padding: 15px 30px;
+    padding: 18px 30px;
   }
-  .header__nav-container {
+  .header__navContainer {
     display: none;
   }
-  .header__account {
+  .header__buttonContainer {
     display: none;
   }
-  .header__burger-logo {
+  .header__burgerLogo {
     display: block;
   }
 }
@@ -139,7 +123,7 @@
     margin-right: 14px;
   }
 
-  .header__right-container>a {
+  .header__rightContainer>a {
     font-size: 10px;
   }
 
@@ -147,7 +131,7 @@
     padding: 5px 12px;
   }
 
-  .header__burger-logo {
+  .header__burgerLogo {
     width: 37px;
     height: 37px;
   }

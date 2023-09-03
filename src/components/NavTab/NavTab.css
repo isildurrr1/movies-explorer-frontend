@@ -24,12 +24,16 @@
 
 @media screen and (max-width: 768px) {
   .navTab__links {
-    margin: 25px auto;
+    margin: 24px auto;
   }
 }
 
 @media screen and (max-width: 425px) {
+  .navTab__links {
+    margin: 24px auto;
+  }
   .navTab__link {
     font-size: 11px;
+    margin: 0 12px;
   }
 }

@@ -30,9 +30,11 @@
 @media screen and (max-width: 425px) {
   .element__title {
     font-size: 18px;
+    letter-spacing: -0.72px;
   }
   .element__paragraph {
     margin-top: 16px;
     font-size: 11px;
+    line-height: 17px;
   }
 }
