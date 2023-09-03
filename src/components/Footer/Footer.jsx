@@ -4,11 +4,11 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <div className="footer__name">
+        <h3 className="footer__name">
           Учебный проект Яндекс.Практикум х BeatFilm.
-        </div>
+        </h3>
         <div className="footer__links-container">
-          <span className="footer__copyright">© 2023</span>
+          <p className="footer__copyright">© 2023</p>
           <nav className="footer__links">
             <a href="https://practicum.yandex.ru/" className="footer__link" target="blank">Яндекс.Практикум</a>
             <a href="https://github.com/isildurrr1" className="footer__link" target="blank">Github</a>

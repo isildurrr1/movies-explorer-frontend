@@ -1,13 +1,13 @@
 import React from 'react'
 import Search from '../Search/Search'
-import Preloader from '../Preloader/Preloader'
+import MoviesCardList from '../MoviesCardList/MoviesCardList'
 
 const SavedMovies = () => {
   return (
-    <div className='saved-movies'>
+    <section className='saved-movies'>
       <Search />
-      <Preloader />
-    </div>
+      <MoviesCardList/>
+    </section>
   )
 }
 

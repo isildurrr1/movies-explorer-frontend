@@ -2,10 +2,10 @@ import './Search.css';
 
 const Search = () => {
   return (
-    <div className="search">
+    <section className="search">
       <div className="search__container">
         <div className="search__input-container">
-          <div className="search__icon" />
+          {/* <div className="search__icon" /> */}
           <input type="text" className="search__input"
             placeholder='Фильм'
             onFocus={(e) => e.target.placeholder = ""}
@@ -16,22 +16,22 @@ const Search = () => {
         <div className="search__switch-container">
           <label className="search__switch">
             <label htmlFor="checkbox-switch"></label>
-            <input className="search__checkbox" type="checkbox" id="checkbox-switch" />
+            <input className="search__checkbox" type="checkbox" id="checkbox-switch" defaultChecked />
             <span className="search__slider" />
           </label>
-          <p className="search__switch-name">Короткометражки</p>
+          <label htmlFor="checkbox-switch" className="search__switch-name">Короткометражки</label>
         </div>
       </div>
       <div className="search__switch-container search__switch-container_mobile">
         <label className="search__switch">
-          <label htmlFor="checkbox-switch"></label>
-          <input className="search__checkbox" type="checkbox" id="checkbox-switch" />
+          <label htmlFor="checkbox-mobile"></label>
+          <input className="search__checkbox" type="checkbox" id="checkbox-mobile" defaultChecked />
           <span className="search__slider" />
         </label>
-        <p className="search__switch-name">Короткометражки</p>
+        <label htmlFor="checkbox-mobile" className="search__switch-name">Короткометражки</label>
       </div>
       <div className="search__line" />
-    </div>
+    </section>
   )
 }
 

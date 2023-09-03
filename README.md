@@ -1,4 +1,5 @@
 # movies-explorer-frontend
+Макет: light-4
 ## Ссылки на проект
 
 IP 51.250.110.109

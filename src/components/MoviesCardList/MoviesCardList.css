@@ -1,4 +1,8 @@
 .card-list {
+  min-height: 474px;
+}
+
+.card-list__container {
   max-width: 1140px;
   margin: 70px auto 0 auto;
   display: grid;
@@ -9,7 +13,7 @@
 
 .card-list__btn-container {
   max-width: 1140px;
-  margin: 50px auto 80px auto;
+  margin: 62px auto 80px auto;
   display: flex;
 }
 
@@ -36,16 +40,16 @@
 }
 
 @media screen and (max-width: 768px) {
-  .card-list {
+  .card-list__container {
     grid-template-columns: repeat(auto-fit, 339px);
   }
 }
 
 @media screen and (max-width: 425px) {
-  .card-list {
+  .card-list__container {
     grid-template-columns: repeat(auto-fit, 300px);
     margin-top: 40px;
-    gap: 39px;
+    gap: 35px;
   }
   .card-list__button {
     width: 240px;
