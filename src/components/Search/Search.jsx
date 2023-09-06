@@ -1,17 +1,30 @@
+import { useState } from 'react';
 import './Search.css';
 
-const Search = () => {
+const Search = ({ handleSearch }) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (e) => setInputValue(e.target.value);
+
+  const searchSubmit = (e) => {
+    e.preventDefault();
+    if (inputValue.trim() !== '') {
+      handleSearch(inputValue);
+    }
+  }
+
   return (
     <section className="search">
       <div className="search__container">
-        <div className="search__inputContainer">
+        <form className="search__inputContainer" onSubmit={searchSubmit}>
           <input type="text" className="search__input"
             placeholder='Фильм'
             onFocus={(e) => e.target.placeholder = ""}
             onBlur={(e) => e.target.placeholder = "Фильм"}
+            onChange={handleChange}
           />
-          <button className='search__button'>Найти</button>
-        </div>
+          <button className='search__button' type='submit'>Найти</button>
+        </form>
         <div className="search__switchContainer">
           <label className="search__switch">
             <label htmlFor="checkbox-switch"></label>

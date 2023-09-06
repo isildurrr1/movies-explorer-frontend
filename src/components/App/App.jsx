@@ -17,7 +17,7 @@ const App = () => {
   const headerLocation = ['/', '/movies', '/saved-movies', '/profile'];
   const footerLocation = ['/', '/movies', '/saved-movies'];
   const navigate = useNavigate();
-  const [loggedIn, setLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(true);
   const [menuActive, setMenuActive] = useState(false);
   const toggleMenuActive = () => setMenuActive(!menuActive);
   const handleRegister = () => {
@@ -28,6 +28,7 @@ const App = () => {
     setLoggedIn(true);
     navigate('/', { replace: true })
   }
+
   return (
     <div className="App">
       {menuActive && <BurgerMenu closeMenu={toggleMenuActive} />}
