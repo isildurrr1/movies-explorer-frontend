@@ -104,6 +104,11 @@
   padding-top: 4px;
 }
 
+.moviesCard__link {
+  text-decoration: none;
+  color: black;
+}
+
 @media screen and (max-width: 768px) {
   .moviesCard__frame {
     width: 339px;
