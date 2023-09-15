@@ -8,8 +8,8 @@ import { moviesApi } from '../../utils/MoviesApi';
 const Movies = () => {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
-  const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery'));
-  const [shortActive, setShortActive] = useState(JSON.parse(localStorage.getItem('shortActive')));
+  const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery') === null ? '' : localStorage.getItem('searchQuery'));
+  const [shortActive, setShortActive] = useState(JSON.parse(localStorage.getItem('shortActive')) === null ? true : JSON.parse(localStorage.getItem('shortActive')));
 
   const handleSearch = (searchString) => setSearchQuery(searchString);
   const handleShortFilms = () => setShortActive(!shortActive)
@@ -28,7 +28,6 @@ const Movies = () => {
   }
 
   useEffect(() => {
-    if (shortActive === null) setShortActive(true)
     localStorage.setItem('shortActive', shortActive)
     if (searchQuery) {
       setLoading(true)
@@ -39,9 +38,8 @@ const Movies = () => {
           setLoading(false);
         })
         .catch(err => console.log(err))
-    }
+    } 
   }, [searchQuery, shortActive]);
-
 
   return (
     <main className='movies'>

@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import './Search.css';
+import { useLocation } from 'react-router-dom';
 
 const Search = ({ handleSearch, searchQuery, shortFilmsActive, handleShortFilms }) => {
-  const [inputValue, setInputValue] = useState(searchQuery);
+  const location = useLocation()
+  const [inputValue, setInputValue] = useState(searchQuery === null ? '' : searchQuery);
   const handleChange = (e) => setInputValue(e.target.value);
   const handleShort = () => {
     handleShortFilms()
@@ -10,6 +12,9 @@ const Search = ({ handleSearch, searchQuery, shortFilmsActive, handleShortFilms 
 
   const searchSubmit = (e) => {
     e.preventDefault();
+    if(location.pathname === '/saved-movies') {
+      handleSearch(inputValue);
+    }
     if (inputValue.trim() !== '') {
       handleSearch(inputValue);
     }

@@ -28,6 +28,10 @@
   transition: opacity 0.4s;
 }
 
+.moviesCard__save-btn_hidden {
+  visibility: hidden;
+}
+
 .moviesCard__saved {
   border: none;
   cursor: pointer;

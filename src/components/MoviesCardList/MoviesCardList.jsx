@@ -15,35 +15,50 @@ import {
 } from '../../utils/constants/constants';
 
 import { useResize } from '../../utils/hooks/useResize';
+import { mainApi } from '../../utils/MainApi';
+import { useLocation } from 'react-router-dom';
 
-const MoviesCardList = ({ movies, loading }) => {
+const MoviesCardList = ({ movies, loading, setHideCard }) => {
+  const location = useLocation();
   const [currentScreen] = useResize();
   const [count, setCount] = useState(CARDS_1280);
   const [addCount, setAddCount] = useState(ADD_CARD_1280);
-  
+  const [myMovies, setMyMovies] = useState([]);
+
   const addMovies = () => setCount(count + addCount);
 
   useEffect(() => {
-    if (currentScreen === SCREEN_480) {
+    if (location.pathname !== '/movies') {
+      setCount(movies.length)
+    } else if (currentScreen === SCREEN_480) {
       setCount(CARDS_480)
       setAddCount(ADD_CARD_480)
     } else if (currentScreen === SCREEN_768) {
       setCount(CARDS_768)
       setAddCount(ADD_CARD_768)
     }
-  }, [currentScreen])
+  }, [currentScreen, location.pathname, movies.length])
 
   let moviesArray = [];
   if (movies !== undefined) {
     moviesArray = movies
   }
+
+  useEffect(() => {
+    mainApi.getMyMovies()
+      .then((res) => {
+        setMyMovies(res)
+      })
+      .catch(err => console.log(err))
+  }, [])
+
   return (
     <section className='cardList'>
       <div className='cardList__container'>
         {
-          moviesArray.length === 0 ? <h1>Ничего не найдено</h1> :
-            loading ? <Preloader /> :
-              movies.slice(0, count).map((data, i) => <MoviesCard movie={data} key={i} />)
+          loading ? <Preloader /> :
+            moviesArray.length === 0 ? <h1>Ничего не найдено</h1> :
+              movies.slice(0, count).map((data, i) => <MoviesCard movie={data} myMovies={myMovies} setHideCard={setHideCard} key={i} />)
         }
       </div>
       {count < moviesArray.length &&
