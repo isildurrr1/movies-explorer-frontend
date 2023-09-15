@@ -30,12 +30,15 @@ const MoviesCardList = ({ movies, loading, setHideCard }) => {
   useEffect(() => {
     if (location.pathname !== '/movies') {
       setCount(movies.length)
-    } else if (currentScreen === SCREEN_480) {
+    } else if (currentScreen <= SCREEN_480) {
       setCount(CARDS_480)
       setAddCount(ADD_CARD_480)
-    } else if (currentScreen === SCREEN_768) {
+    } else if(currentScreen <= SCREEN_768) {
       setCount(CARDS_768)
       setAddCount(ADD_CARD_768)
+    } else {
+      setCount(CARDS_1280)
+      setAddCount(ADD_CARD_1280)
     }
   }, [currentScreen, location.pathname, movies.length])
 
