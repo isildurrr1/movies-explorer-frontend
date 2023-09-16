@@ -109,6 +109,10 @@ const Auth = ({ type, onSubmit }) => {
             <input
               {...register('password', {
                 required: "The field must not be empty",
+                minLength: {
+                  value: 8,
+                  message: "Minimum password length 8 characters"
+                }
               })}
               type="password"
               id='password'
