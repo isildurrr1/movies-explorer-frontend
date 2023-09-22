@@ -33,7 +33,7 @@ const MoviesCardList = ({ movies, loading, setHideCard }) => {
     } else if (currentScreen <= SCREEN_480) {
       setCount(CARDS_480)
       setAddCount(ADD_CARD_480)
-    } else if(currentScreen <= SCREEN_768) {
+    } else if (currentScreen <= SCREEN_768) {
       setCount(CARDS_768)
       setAddCount(ADD_CARD_768)
     } else {
@@ -61,7 +61,7 @@ const MoviesCardList = ({ movies, loading, setHideCard }) => {
         {
           loading ? <Preloader /> :
             moviesArray.length === 0 ? <h1>Ничего не найдено</h1> :
-              movies.slice(0, count).map((data, i) => <MoviesCard movie={data} myMovies={myMovies} setHideCard={setHideCard} key={i} />)
+              movies.slice(0, count).map((data) => <MoviesCard movie={data} myMovies={myMovies} setHideCard={setHideCard} key={data.id ? data.id : data._id} />)
         }
       </div>
       {count < moviesArray.length &&

@@ -24,9 +24,9 @@ const SavedMovies = () => {
     let filtredMovies = allMovies.filter(function (movie) {
       return reg.test(movie.nameRU);
     })
-    if (!shortActive) {
+    if (shortActive) {
       return filtredMovies.filter(function (movie) {
-        return movie.duration >= 40;
+        return movie.duration <= 40;
       })
     }
     return filtredMovies;

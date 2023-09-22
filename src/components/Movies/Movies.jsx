@@ -9,7 +9,7 @@ const Movies = () => {
   const [loading, setLoading] = useState(false);
   const [movies, setMovies] = useState([]);
   const [searchQuery, setSearchQuery] = useState(localStorage.getItem('searchQuery') === null ? '' : localStorage.getItem('searchQuery'));
-  const [shortActive, setShortActive] = useState(JSON.parse(localStorage.getItem('shortActive')) === null ? true : JSON.parse(localStorage.getItem('shortActive')));
+  const [shortActive, setShortActive] = useState(JSON.parse(localStorage.getItem('shortActive')) === null ? false : JSON.parse(localStorage.getItem('shortActive')));
 
   const handleSearch = (searchString) => setSearchQuery(searchString);
   const handleShortFilms = () => setShortActive(!shortActive)
@@ -19,9 +19,9 @@ const Movies = () => {
     let filtredMovies = allMovies.filter(function (movie) {
       return reg.test(movie.nameRU);
     })
-    if (!shortActive) {
+    if (shortActive) {
       return filtredMovies.filter(function (movie) {
-        return movie.duration >= 40;
+        return movie.duration <= 40;
       })
     }
     return filtredMovies;

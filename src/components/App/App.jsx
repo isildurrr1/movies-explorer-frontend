@@ -41,15 +41,16 @@ const App = () => {
   }, [navigate])
 
   const handleRegister = (data) => {
+    setDisabled(true)
     const { name, email, password } = data;
     mainApi.register(name, email, password)
       .then(() => {
         setDisabled(true)
-        setLoggedIn(true);
-        navigate('/signin', { replace: true });
+        handleLogin({ email, password })
         setDisabled(false)
       })
       .catch((error) => {
+        setDisabled(false)
         if (error === 'Ошибка: 400') {
           setError("Некорректные данные");
         } else if (error === 'Ошибка: 409') {
@@ -61,14 +62,18 @@ const App = () => {
   }
 
   const handleLogin = (data) => {
+    setDisabled(true)
     const { email, password } = data;
     mainApi.login(email, password)
       .then((res) => {
+        setDisabled(true)
         setLoggedIn(true);
         localStorage.setItem('jwt', res.token);
         navigate('/movies', { replace: true })
+        setDisabled(false)
       })
       .catch((error) => {
+        setDisabled(false)
         if (error === 'Ошибка: 400') {
           setError("Некорректные данные");
         } else {
@@ -91,16 +96,30 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Main />} />
           <Route path='/movies' element={
-            <ProtectedRouteElement loggedIn={loggedIn} element={Movies} />
+            <ProtectedRouteElement loggedIn={loggedIn}>
+              <Movies />
+            </ProtectedRouteElement>
           } />
           <Route path='/saved-movies' element={
-            <ProtectedRouteElement loggedIn={loggedIn} element={SavedMovies} />
+            <ProtectedRouteElement loggedIn={loggedIn}>
+              <SavedMovies />
+            </ProtectedRouteElement>
           } />
           <Route path='/profile' element={
-            <ProtectedRouteElement loggedIn={loggedIn} element={Profile} onExit={handleSignout} />
+            <ProtectedRouteElement loggedIn={loggedIn}>
+              <Profile loggedIn={loggedIn} onExit={handleSignout}/>
+            </ProtectedRouteElement>
           } />
-          <Route path='/signup' element={<Auth type='register' onSubmit={handleRegister} />} />
-          <Route path='/signin' element={<Auth type='login' onSubmit={handleLogin} />} />
+          <Route path='/signup' element={
+            <ProtectedRouteElement loggedIn={!loggedIn}>
+              <Auth type='register' onSubmit={handleRegister} />
+            </ProtectedRouteElement>
+          } />
+          <Route path='/signin' element={
+            <ProtectedRouteElement loggedIn={!loggedIn}>
+              <Auth type='login' onSubmit={handleLogin} />
+            </ProtectedRouteElement>
+          } />
           <Route path="*" element={<NotFound />} />
         </Routes>
         {footerLocation.find((i) => i === location.pathname) &&
