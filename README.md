@@ -7,7 +7,7 @@ https://github.com/isildurrr1/movies-explorer-frontend/pull/2
 
 ## Ссылки на проект
 
-IP 158.160.27.247
+IP 158.160.66.129
 
 Frontend https://isildurrr1-diplom.nomoreparties.co
 
