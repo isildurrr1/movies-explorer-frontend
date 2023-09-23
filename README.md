@@ -1,8 +1,13 @@
 # movies-explorer-frontend
 Макет: light-4
+
+## pull-request
+
+https://github.com/isildurrr1/movies-explorer-frontend/pull/2
+
 ## Ссылки на проект
 
-IP 51.250.110.109
+IP 158.160.66.129
 
 Frontend https://isildurrr1-diplom.nomoreparties.co
 

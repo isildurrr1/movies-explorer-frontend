@@ -28,6 +28,10 @@
   transition: opacity 0.4s;
 }
 
+.moviesCard__save-btn_hidden {
+  visibility: hidden;
+}
+
 .moviesCard__saved {
   border: none;
   cursor: pointer;
@@ -98,6 +102,11 @@
   box-sizing: border-box;
   background-color: #F9F9F9;
   padding-top: 4px;
+}
+
+.moviesCard__link {
+  text-decoration: none;
+  color: black;
 }
 
 @media screen and (max-width: 768px) {

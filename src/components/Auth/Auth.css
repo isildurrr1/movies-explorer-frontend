@@ -58,7 +58,7 @@
 .auth__submit {
   height: 45px;
   padding: 0;
-  margin: 70px 0 16px 0;
+  margin: 60px 0 16px 0;
   border-radius: 3px;
   background: #000;
   border: none;
@@ -68,6 +68,17 @@
   font-weight: 500;
   opacity: 1;
   transition: opacity 0.3s;
+}
+
+.auth__submit:disabled {
+  background-color: grey;
+  opacity: 0.5;
+}
+
+.auth__submit:disabled:hover {
+  opacity: 0.5;
+  cursor: default;
+  background-color: grey;
 }
 
 .auth__submit:hover {
@@ -133,7 +144,7 @@
   }
 
   .auth__submit {
-    margin: 160px 0 10px 0;
+    margin: 150px 0 10px 0;
     font-size: 12px;
   }
 

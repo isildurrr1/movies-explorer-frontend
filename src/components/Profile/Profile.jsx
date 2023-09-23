@@ -1,15 +1,71 @@
 import { Link } from 'react-router-dom';
 import './Profile.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { mainApi } from '../../utils/MainApi';
 
-const Profile = () => {
-  const [profileData, setProfileData] = useState({ name: 'Виталий', mail: 'pochta@yandex.ru' })
+const Profile = ({ loggedIn, onExit }) => {
+  const [profileData, setProfileData] = useState({ name: '', email: '' })
+  const [initialProfileData, setInitialProfileData] = useState({ name: '', email: '' })
   const [edit, setEdit] = useState(false);
-  const handleEdit = () => setEdit(!edit);
+  const [error, setError] = useState('')
+  const [disabled, setDisabled] = useState(true)
+
+  useEffect(() => {
+    if (loggedIn) {
+      mainApi.getProfileInfo()
+        .then(userData => {
+          setInitialProfileData(userData)
+          setProfileData(userData)
+        })
+        .catch(err => console.log(err))
+    }
+  }, [loggedIn])
+
+  const handleEdit = () => {
+    setError('')
+    setEdit(!edit);
+  }
+
+  useEffect(() => {
+    if(initialProfileData !== profileData) {
+      setDisabled(false)
+    } else {
+      setDisabled(true)
+    }
+  }, [initialProfileData, profileData])
+
+  const exit = () => onExit();
+
+  const updateProfile = (e) => {
+    e.preventDefault();
+    if (initialProfileData !== profileData) {
+      setDisabled(true)
+      mainApi.setProfileInfo(profileData)
+        .then((result) => {
+          setInitialProfileData(result)
+          setProfileData(result)
+          setError('Успешно')
+          setTimeout(() => {
+            setEdit(!edit);
+            setDisabled(true)
+          }, 1000)
+        }
+        )
+        .catch(err => {
+          setDisabled(false)
+          if (err === 'Ошибка: 400') {
+            setError("Некорректные данные");
+          }
+        })
+    } else {
+      setDisabled(false)
+    }
+  }
+
   return (
     <section className='profile'>
       <div className="profile__container">
-        <form className="profile__form">
+        <form className="profile__form" onSubmit={updateProfile}>
           <h1 className="profile__title">{`Привет, ${profileData.name}!`}</h1>
           <div className="profile__inputContainer profile__inputContainer_underline">
             <label className='profile__label' htmlFor="name">Имя</label>
@@ -27,25 +83,34 @@ const Profile = () => {
               type="email"
               id="email"
               className="profile__input"
-              value={profileData.mail}
-              onChange={e => { setProfileData(state => ({ ...state, mail: e.target.value })) }}
+              value={profileData.email}
+              onChange={e => { setProfileData(state => ({ ...state, email: e.target.value })) }}
               disabled={!edit} />
           </div>
           {edit ?
             (<div className="profile__editContainer">
-              <span className="profile__error">При обновлении профиля произошла ошибка.</span>
-              <button type='submit' className='profile__save'>Сохранить</button>
+              <span
+                className="profile__error"
+                style={
+                  error === 'Успешно' ?
+                    {
+                      color: 'green',
+                      fontSize: 30,
+                      marginBottom: '20px',
+                      marginTop: '-20px'
+                    } : {}}>{error}</span>
+              <button className='profile__save' type='submit' disabled={disabled}>Сохранить</button>
             </div>)
             :
             (
               <div className="profile__edit">
-                <button className='profile__link profile__link_submit' type='submit' onClick={handleEdit}>Редактировать</button>
-                <Link className='profile__link profile__link_logout' to={'/signin'}>Выйти из аккаунта</Link>
+                <button className='profile__link profile__link_submit' type='button' onClick={handleEdit}>Редактировать</button>
+                <Link className='profile__link profile__link_logout' to={'/'} onClick={exit}>Выйти из аккаунта</Link>
               </div>
             )}
         </form>
-      </div>
-    </section>
+      </div >
+    </section >
   )
 }
 

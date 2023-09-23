@@ -1,8 +1,26 @@
 import { Link } from 'react-router-dom'
 import './Auth.css'
 import Logo from '../Logo/Logo'
+import { useForm } from 'react-hook-form';
+import { useContext, useEffect } from 'react';
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 const Auth = ({ type, onSubmit }) => {
+
+  const {error, setError, disabled, setDisabled} = useContext(CurrentUserContext);
+
+  const {
+    register,
+    formState: {
+      errors,
+      isValid
+    },
+    handleSubmit,
+    reset,
+  } = useForm(
+    { mode: "all" }
+  );
+
   let data = {};
   if (type === 'register') {
     data = {
@@ -21,11 +39,21 @@ const Auth = ({ type, onSubmit }) => {
       link: '/signup'
     }
   }
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    onSubmit();
-    e.target.reset();
+
+  useEffect(() => {
+    setDisabled(!isValid)
+  }, [isValid, setDisabled])
+
+  const formSubmit = (data) => {
+    onSubmit(data);
   }
+
+
+  const resetForm = () => {
+    reset()
+    setError('')
+  }
+
   return (
     <div className='auth'>
       <div className="auth__container">
@@ -35,28 +63,71 @@ const Auth = ({ type, onSubmit }) => {
           </div>
           <h1 className="auth__headerTitle">{data.hello}</h1>
         </div>
-        <form className="auth__form" onSubmit={handleSubmit} name='authForm'>
+        <form className="auth__form" onSubmit={handleSubmit(formSubmit)} name='authForm'>
           {type === 'register' &&
             <div className="auth__inputContainer">
               <label htmlFor="name" className='auth__label' >Имя</label>
-              <input type="text" id='name' className="auth__input" placeholder='Ваше имя...' required />
-              <span className="auth__error"></span>
+              <input
+                {...register('name', {
+                  required: "The field must not be empty",
+                  pattern: {
+                    value: /^[a-zA-Zа-яА-ЯёЁ+\s-]*$/,
+                    message: "Enter a valid name"
+                  }
+                })}
+                type="text"
+                id='name'
+                name="name"
+                className="auth__input"
+                placeholder='Ваше имя...'
+                required
+              />
+              <span className='auth__error'>{errors?.name && errors.name.message}</span>
             </div>
           }
           <div className="auth__inputContainer">
             <label htmlFor="email" className='auth__label'>E-mail</label>
-            <input type="email" id='email' className="auth__input" placeholder='Ваша почта...' required />
-            <span className="auth__error"></span>
+            <input
+              {...register('email', {
+                required: "The field must not be empty",
+                pattern: {
+                  value: /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/,
+                  message: "Enter a valid email"
+                }
+              })}
+              type="email"
+              id='email'
+              name="email"
+              className="auth__input"
+              placeholder='Ваша почта...'
+              required
+            />
+            <span className='auth__error'>{errors?.email && errors.email.message}</span>
           </div>
           <div className="auth__inputContainer">
             <label htmlFor="password" className='auth__label' >Пароль</label>
-            <input type="password" id='password' className="auth__input" placeholder='Ваш пароль...' required />
-            <span className="auth__error">Что-то пошло не так...</span>
+            <input
+              {...register('password', {
+                required: "The field must not be empty",
+                minLength: {
+                  value: 8,
+                  message: "Minimum password length 8 characters"
+                }
+              })}
+              type="password"
+              id='password'
+              name="password"
+              className="auth__input"
+              placeholder='Ваш пароль...'
+              required
+            />
+            <span className='auth__error'>{errors?.password && errors.password.message}</span>
           </div>
-          <button className={`auth__submit ${type === 'login' ? 'auth__submit_log' : ''}`} >{data.buttonText}</button>
+          <span className='auth__error'>{error}</span>
+          <button className={`auth__submit ${type === 'login' ? 'auth__submit_log' : ''}`} disabled={disabled}>{data.buttonText}</button>
           <div className='auth__underButtonContainer'>
             <span className='auth__underButtonText'>{data.underBtnText}</span>
-            <Link className='auth__linkText' to={data.link}>{data.toLinkText}</Link>
+            <Link className='auth__linkText' to={data.link} onClick={resetForm}>{data.toLinkText}</Link>
           </div>
         </form>
       </div>
