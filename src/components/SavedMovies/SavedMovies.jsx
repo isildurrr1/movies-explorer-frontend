@@ -10,11 +10,7 @@ const SavedMovies = () => {
   const [movies, setMovies] = useState([]);
   const [hideCard, setHideCard] = useState(false)
   const [searchQuery, setSearchQuery] = useState('');
-  const [shortActive, setShortActive] = useState(
-    JSON.parse(localStorage.getItem('shortActive')) === null
-      ? true
-      : JSON.parse(localStorage.getItem('shortActive'))
-  );
+  const [shortActive, setShortActive] = useState(false);
 
   const handleSearch = (searchString) => setSearchQuery(searchString);
   const handleShortFilms = () => setShortActive(!shortActive)
@@ -33,7 +29,6 @@ const SavedMovies = () => {
   }
 
   useEffect(() => {
-    localStorage.setItem('shortActive', shortActive)
     mainApi.getMyMovies()
       .then((res) => {
         setHideCard(false)

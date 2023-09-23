@@ -8,7 +8,7 @@ const Profile = ({ loggedIn, onExit }) => {
   const [initialProfileData, setInitialProfileData] = useState({ name: '', email: '' })
   const [edit, setEdit] = useState(false);
   const [error, setError] = useState('')
-  const [disabled, setDisabled] = useState(false)
+  const [disabled, setDisabled] = useState(true)
 
   useEffect(() => {
     if (loggedIn) {
@@ -26,12 +26,18 @@ const Profile = ({ loggedIn, onExit }) => {
     setEdit(!edit);
   }
 
+  useEffect(() => {
+    if(initialProfileData !== profileData) {
+      setDisabled(false)
+    } else {
+      setDisabled(true)
+    }
+  }, [initialProfileData, profileData])
+
   const exit = () => onExit();
 
   const updateProfile = (e) => {
     e.preventDefault();
-    console.log(initialProfileData === profileData)
-    console.log(profileData)
     if (initialProfileData !== profileData) {
       setDisabled(true)
       mainApi.setProfileInfo(profileData)
@@ -41,7 +47,7 @@ const Profile = ({ loggedIn, onExit }) => {
           setError('Успешно')
           setTimeout(() => {
             setEdit(!edit);
-            setDisabled(false)
+            setDisabled(true)
           }, 1000)
         }
         )
@@ -52,7 +58,7 @@ const Profile = ({ loggedIn, onExit }) => {
           }
         })
     } else {
-      setEdit(!edit);
+      setDisabled(false)
     }
   }
 
@@ -78,7 +84,7 @@ const Profile = ({ loggedIn, onExit }) => {
               id="email"
               className="profile__input"
               value={profileData.email}
-              onChange={e => { setProfileData(state => ({ ...state, mail: e.target.value })) }}
+              onChange={e => { setProfileData(state => ({ ...state, email: e.target.value })) }}
               disabled={!edit} />
           </div>
           {edit ?
